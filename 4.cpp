@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 #include <limits>
 using namespace std;
@@ -65,7 +65,7 @@ int main()
 
 double getValue()
 {
-    double value;
+    double value = 0.0;
     cin >> value;
     if (cin.fail())
     {
@@ -77,19 +77,18 @@ double getValue()
 
 double calculateFunction(const double x)
 {
-    return 3 * x - 4 * log(x) - 5; 
+    return 3 * x - 4 * log(x) - 5;
 }
 
 double getPositiveStep()
 {
-    double step;
-    do {
-        cout << "Введите шаг: ";
-        step = getValue();
-        if (step <= 0)
-        {
-            cout << "Ошибка. Шаг должен быть положительным. Повторите ввод." << endl;
-        }
-    } while (step <= 0);
+    double step = 0;
+    cout << "Введите шаг: ";
+    step = getValue();
+    if (step <= 0)
+    {
+        cout << "Ошибка. Шаг должен быть положительным. Повторите ввод." << endl;
+        abort();
+    }
     return step;
 }
