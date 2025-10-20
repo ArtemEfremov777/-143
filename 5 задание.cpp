@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 #include <limits>
 using namespace std;
@@ -20,7 +20,7 @@ double sumModuloE(const double e);
 /**
  * @brief Вычисляет рекурентное выражение
  * @param k Переменная k
- * @return -1/ (k + 1) / (k + 2)
+ * @return -1.0 / (k + 1) / (k + 2)
  */
 double recur(const int k);
 
@@ -44,12 +44,12 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     int n = getValidN();
-  
+
 
     cout << "Сумма первых " << n << " членов последовательности: " << sumFirstN(n) << endl;
 
     double e = getValidE();
- 
+
     cout << "Сумма всех членов последовательности, модуль которых не меньше " << e << ": " << sumModuloE(e) << endl;
 
     return 0;
@@ -117,5 +117,6 @@ double sumModuloE(const double e)
 
 double recur(const int k)
 {
-    return -1/ (k + 1) / (k + 2);
+    double denominator = (k + 1) * (k + 2);
+    return -1.0 / denominator;
 }
